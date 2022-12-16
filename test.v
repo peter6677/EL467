@@ -24,7 +24,6 @@
 
 module test;
 
- // Inputs
  reg reset;
  reg clk;
  reg [1:0] H_in1;
@@ -45,7 +44,7 @@ module test;
  wire [3:0] S_out1;
  wire [3:0] S_out0;
 
- // Instantiate the Unit Under Test (UUT)
+ 
  aclock uut (
  .reset(reset), 
  .clk(clk), 
@@ -65,10 +64,10 @@ module test;
  .S_out1(S_out1), 
  .S_out0(S_out0)
  );
- // clock 10Hz
+
  initial begin 
   clk = 0;
-  forever #50 clk = ~clk;
+  forever #50000000 clk = ~clk;
  end
  initial begin
  // Initialize Inputs
@@ -76,14 +75,14 @@ module test;
  H_in1 = 1;
  H_in0 = 0;
  M_in1 = 1;
- M_in0 = 4;
+ M_in0 = 9;
  LD_time = 0;
  LD_alarm = 0;
  STOP_al = 0;
- AL_ON = 0; // set clock time to 11h26, alarm time to 00h00 when reset
- // Wait 100 ns for global reset to finish
- #1000;
-      reset = 0;
+ AL_ON = 0;
+
+ #1000000000;
+ reset = 0;
  H_in1 = 1;
  H_in0 = 0;
  M_in1 = 2;
@@ -91,8 +90,10 @@ module test;
  LD_time = 0;
  LD_alarm = 1;
  STOP_al = 0;
- AL_ON = 1; // turn on Alarm and set the alarm time to 11h30
- #1000; 
+ AL_ON = 1; 
+ 
+
+#1000000000;
  reset = 0;
  H_in1 = 1;
  H_in0 = 0;
@@ -101,31 +102,17 @@ module test;
  LD_time = 0;
  LD_alarm = 0;
  STOP_al = 0;
- AL_ON = 1; 
- wait(Alarm); // wait until Alarm signal is high when the alarm time equals clock time
- #1000
- STOP_al = 1; // pulse high the STOP_al to push low the Alarm signal
- #1000
- STOP_al = 0;
- H_in1 = 0;
- H_in0 = 4;
- M_in1 = 4;
- M_in0 = 5;
- LD_time = 1; // set clock time to 11h25
- LD_alarm = 0;
- #1000
- STOP_al = 0;
- H_in1 = 0;
- H_in0 = 4;
- M_in1 = 5;
- M_in0 = 5;
- LD_alarm = 1; // set alarm time to 11h35
- LD_time = 0;
- wait(Alarm); // wait until Alarm signal is high when the alarm time equals clock time
- #1000
- STOP_al = 1;// pulse high the STOP_al to push low the Alarm signal
+ AL_ON = 1;
+
+wait(Alarm);
+#1000000000;
+#1000000000;
+#1000000000;
+#1000000000;
+#1000000000;
+#1000000000;
+STOP_al = 1;
+
  
  end
-      
 endmodule
-

@@ -5,7 +5,7 @@
 // 
 // Create Date:    10:37:54 12/12/2022 
 // Design Name: 
-// Module Name:    Aclock 
+// Module Name:    aclock 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 

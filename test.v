@@ -5,14 +5,14 @@
 // Engineer:
 //
 // Create Date:   10:57:51 11/09/2022
-// Design Name:   aclock
+// Design Name:   alarm_clock
 // Module Name:   /home/ise/B-Tech/EL467/Project/Alarm_Clock/test.v
 // Project Name:  Alarm_Clock
 // Target Device:  
 // Tool versions:  
 // Description: 
 //
-// Verilog Test Fixture created by ISE for module: aclock
+// Verilog Test Fixture created by ISE for module: alarm_clock
 //
 // Dependencies:
 // 
@@ -23,7 +23,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 module test;
-
+ 
  reg reset;
  reg clk;
  reg [1:0] H_in1;
@@ -45,7 +45,7 @@ module test;
  wire [3:0] S_out0;
 
  
- aclock uut (
+ alarm_clock uut (
  .reset(reset), 
  .clk(clk), 
  .H_in1(H_in1), 

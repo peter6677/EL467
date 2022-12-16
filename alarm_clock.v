@@ -167,7 +167,7 @@ always @(posedge clk_1s or posedge reset)
     if(AL_ON) Alarm <= 1; 
    end
  
-  if(STOP_al) Alarm <=0;
+   if(STOP_al) Alarm <=0;
  end
 end
  

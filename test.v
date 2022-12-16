@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   10:57:51 11/09/2022
+// Create Date:   10:57:51 12/12/2022
 // Design Name:   alarm_clock
 // Module Name:   /home/ise/B-Tech/EL467/Project/Alarm_Clock/test.v
 // Project Name:  Alarm_Clock
